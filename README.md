@@ -1,19 +1,29 @@
 # Cybersecurity Projects Portfolio
 
-Welcome to my **Cybersecurity Projects Portfolio**! This repository showcases various cybersecurity projects that demonstrate my skills in vulnerability assessment, penetration testing, network security, and more. Below you'll find details on each project, the tools I used, and how you can replicate these projects.
+Welcome to my **Cybersecurity Projects Portfolio**! This repository showcases various cybersecurity projects that demonstrate my skills in vulnerability assessment, penetration testing, network security, and more.
 
 ---
 
-## Table of Contents
-1. [Vulnerability Assessment & Penetration Testing (VAPT)](#vulnerability-assessment--penetration-testing-vapt)
-2. [Web Application Security Testing](#web-application-security-testing)
-3. [Firewall Configuration with iptables](#firewall-configuration-with-iptables)
-4. [Intrusion Detection System (IDS) Setup](#intrusion-detection-system-ids-setup)
-5. [Password Cracking & Brute-Force Simulation](#password-cracking--brute-force-simulation)
-6. [Wi-Fi Network Security](#wi-fi-network-security)
-7. [Encryption & Decryption with Python](#encryption--decryption-with-python)
+## Projects
+
+Visit my detailed [Projects Page](https://yourusername.github.io/cybersecurity-portfolio/projects.html) to see all my cybersecurity projects:
+
+1. [Vulnerability Assessment & Penetration Testing (VAPT)](https://yourusername.github.io/cybersecurity-portfolio/vapt.html)
+2. [Web Application Security Testing](https://yourusername.github.io/cybersecurity-portfolio/web-security.html)
+3. [Firewall Configuration with iptables](https://yourusername.github.io/cybersecurity-portfolio/firewall.html)
+4. [Intrusion Detection System Setup](https://yourusername.github.io/cybersecurity-portfolio/ids.html)
+5. [Password Cracking & Brute-Force Simulation](https://yourusername.github.io/cybersecurity-portfolio/password-cracking.html)
+6. [Wi-Fi Network Security](https://yourusername.github.io/cybersecurity-portfolio/wifi-security.html)
+7. [Encryption & Decryption with Python](https://yourusername.github.io/cybersecurity-portfolio/encryption.html)
 
 ---
+
+## Contact Information
+
+- **Email**: [your.email@example.com](mailto:your.email@example.com)
+- **LinkedIn**: [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)
+- **GitHub**: [github.com/yourusername](https://github.com/yourusername)
+
 
 
 
