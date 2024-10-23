@@ -10,7 +10,7 @@ Welcome to my **Cybersecurity Projects Portfolio**! This repository showcases va
 3. [Firewall Configuration with iptables](#firewall-configuration-with-iptables)
 4. [Intrusion Detection System (IDS) Setup](#intrusion-detection-system-ids-setup)
 5. [Password Cracking & Brute-Force Simulation](#password-cracking--brute-force-simulation)
-6. [Wi-Fi Network Security](#wi-fi-network-security)
+6. [Network Security]([#network-security](https://github.com/KayCxSn1/KayCxSn.git))
 7. [Encryption & Decryption with Python](#encryption--decryption-with-python)
 
 ---
@@ -21,4 +21,4 @@ Welcome to my **Cybersecurity Projects Portfolio**! This repository showcases va
 ## Web Application Security Testing
 **Tools Used**: Burp Suite, OWASP ZAP
 
-<!-- Continue with more project sections as needed -->
+
