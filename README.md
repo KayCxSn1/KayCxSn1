@@ -6,7 +6,7 @@ Welcome to my **Cybersecurity Projects Portfolio**! This repository showcases va
 
 ## Projects
 
-Visit my detailed [Projects Page](https://KayCxSn1.github.io/KayCxSn1/projects.html)to see all my cybersecurity projects:
+Visit my detailed [Projects Page](https://KayCxSn1.github.io/docs/projects.htmll)to see all my cybersecurity projects:
 
 1. [Vulnerability Assessment & Penetration Testing (VAPT)](https://yourusername.github.io/cybersecurity-portfolio/vapt.html)
 2. [Web Application Security Testing](https://yourusername.github.io/cybersecurity-portfolio/web-security.html)
