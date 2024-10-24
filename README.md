@@ -13,7 +13,7 @@ Visit my detailed [Projects Page](https://kaycxsn1.github.io/KayCxSn1/docs/proje
 3. [Firewall Configuration with iptables](https://yourusername.github.io/cybersecurity-portfolio/firewall.html)
 4. [Intrusion Detection System Setup](https://yourusername.github.io/cybersecurity-portfolio/ids.html)
 5. [Password Cracking & Brute-Force Simulation](https://yourusername.github.io/cybersecurity-portfolio/password-cracking.html)
-6. [Network Security](https://kaycxsn1.github.io/KayCxSn1/docs/NetworkSecurityLab.html)
+6. [Network Security](https://kaycxsn1.github.io/KayCxSn1/docs/NetworkSecurityLab)
 7. [Encryption & Decryption with Python](https://yourusername.github.io/cybersecurity-portfolio/encryption.html)
 
 ---
