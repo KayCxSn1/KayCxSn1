@@ -1,110 +1,132 @@
-# Network Security Lab Project
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Security Lab Project</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #1e90ff;
+        }
+        a {
+            color: #1e90ff;
+        }
+        a:hover {
+            color: #ff6347;
+        }
+        header, footer {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            padding: 10px;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Network Security Lab Project</h1>
+    </header>
 
-## Overview
-This project involved configuring a secure network environment using **pfSense**, **Ubuntu**, **Debian**, and **Kali Linux**. The lab focused on three main tasks:
+    <section>
+        <h2>Overview</h2>
+        <p>This project involved configuring a secure network environment using <strong>pfSense</strong>, <strong>Ubuntu</strong>, <strong>Debian</strong>, and <strong>Kali Linux</strong>. The lab focused on three main tasks:</p>
+        <ol>
+            <li>Blocking unwanted web traffic.</li>
+            <li>Making specific services (web server and SSH) accessible from remote networks.</li>
+            <li>Implementing <strong>Suricata</strong> for intrusion detection with custom rules for DoS and SSH brute force attacks.</li>
+        </ol>
+        <p>All tasks were tested and verified using <strong>Kali Linux</strong> as the attack machine.</p>
+    </section>
 
-1. Blocking unwanted web traffic.
-2. Making specific services (web server and SSH) accessible from remote networks.
-3. Implementing **Suricata** for intrusion detection with custom rules for DoS and SSH brute force attacks.
+    <section>
+        <h2>Lab Setup</h2>
+        <h3>Components:</h3>
+        <ul>
+            <li><strong>pfSense Firewall</strong>: Configured as the firewall and DHCP server. Used to block specific traffic and enable remote access to services.</li>
+            <li><strong>Ubuntu Server</strong>: Hosted a web server (Apache) and SSH service. Secured with <strong>UFW</strong> (Uncomplicated Firewall) and firewall rules on <strong>pfSense</strong>.</li>
+            <li><strong>Debian Client</strong>: Configured as a DHCP client for local network testing. Used to verify network configurations and test service access.</li>
+            <li><strong>Kali Linux</strong>: Served as the attack machine for testing DoS and SSH brute force attacks.</li>
+        </ul>
+    </section>
 
-All tasks were tested and verified using **Kali Linux** as the attack machine.
+    <section>
+        <h2>Tasks and Implementation</h2>
+        <h3>Task 1: Block Unwanted Web Traffic</h3>
+        <p>Configured <strong>pfSense firewall rules</strong> to block specific types of traffic (e.g., unwanted HTTP/S traffic). Implemented <strong>DNS blocklists</strong> to prevent access to malicious and unwanted domains.</p>
+        <h4>Verification:</h4>
+        <p>Blocked traffic was tested by attempting to access restricted websites from the <strong>Debian client</strong>, which was successfully filtered by <strong>pfSense</strong>. Logs confirmed the traffic was blocked.</p>
 
----
+        <h3>Task 2: Enable Web Server and SSH Access from Remote Networks</h3>
+        <p>Set up <strong>port forwarding</strong> in <strong>pfSense</strong> to forward traffic (ports 80 and 22) to the <strong>Ubuntu server</strong>. Configured <strong>Apache</strong> to serve web pages and <strong>SSH</strong> for secure remote access. Secured services on <strong>Ubuntu</strong> using <strong>UFW</strong> to allow only necessary traffic.</p>
+        <h4>Verification:</h4>
+        <p>Used <strong>Kali Linux</strong> to test external access to the web server and SSH service, confirming successful connections from outside the local network.</p>
 
-## Lab Setup
+        <h3>Task 3: Implement Suricata for DoS and SSH Brute Force Detection</h3>
+        <p>Installed and configured <strong>Suricata</strong> on <strong>pfSense</strong> for intrusion detection. Developed custom <strong>Suricata rules</strong> to detect DoS and SSH brute force attacks.</p>
+        <ul>
+            <li><strong>DoS rule</strong>: Monitors for high-volume traffic from a single IP.</li>
+            <li><strong>SSH brute force rule</strong>: Detects multiple failed login attempts from a single IP.</li>
+        </ul>
+        <h4>Verification:</h4>
+        <p>Simulated both <strong>DoS</strong> and <strong>SSH brute force attacks</strong> using <strong>Kali Linux</strong>. <strong>Suricata</strong> successfully detected the attacks and generated alerts, which were logged by <strong>pfSense</strong>.</p>
+    </section>
 
-### Components:
+    <section>
+        <h2>Network Architecture Diagram</h2>
+        <p><img src="link_to_network_diagram" alt="Network Diagram"></p>
+        <p><em>(The diagram shows pfSense firewall, Ubuntu server, Debian client, Kali Linux attacker, and external network connections.)</em></p>
+    </section>
 
-- **pfSense Firewall**:
-  - Configured as the firewall and DHCP server.
-  - Used to block specific traffic and enable remote access to services.
+    <section>
+        <h2>Testing and Results</h2>
+        <p>Each task was tested with the following outcomes:</p>
+        <ul>
+            <li><strong>Task 1</strong>: Access to blocked websites was denied, as verified through logs on <strong>pfSense</strong>.</li>
+            <li><strong>Task 2</strong>: External access to both the web server and SSH services was verified using <strong>Kali Linux</strong>, confirming successful connections.</li>
+            <li><strong>Task 3</strong>: Custom rules for DoS and SSH brute force attacks triggered alerts in <strong>Suricata</strong>, indicating successful detection and logging.</li>
+        </ul>
+    </section>
 
-- **Ubuntu Server**:
-  - Hosted a web server (Apache) and SSH service.
-  - Secured with **UFW** (Uncomplicated Firewall) and firewall rules on **pfSense**.
+    <section>
+        <h2>Security Measures</h2>
+        <ul>
+            <li>Configured <strong>pfSense firewall</strong> to block unwanted traffic and enforce security rules.</li>
+            <li>Applied additional security to the <strong>Ubuntu server</strong> using <strong>UFW</strong> and SSH key-based authentication.</li>
+            <li>Deployed <strong>Suricata</strong> with custom rules to monitor and detect DoS and brute force attacks.</li>
+        </ul>
+    </section>
 
-- **Debian Client**:
-  - Configured as a DHCP client for local network testing.
-  - Used to verify network configurations and test service access.
+    <section>
+        <h2>Conclusion</h2>
+        <p>This project demonstrated the ability to set up and secure a network using <strong>pfSense</strong>, <strong>Ubuntu</strong>, <strong>Debian</strong>, and <strong>Kali Linux</strong>. Tasks including traffic blocking, external service access, and intrusion detection were successfully implemented, tested, and verified. Future improvements could involve expanding the network, configuring VPNs, or enhancing the IDS with more advanced rules.</p>
+    </section>
 
-- **Kali Linux**:
-  - Served as the attack machine for testing DoS and SSH brute force attacks.
-  
----
+    <section>
+        <h2>References</h2>
+        <ul>
+            <li><a href="https://docs.netgate.com/pfsense/en/latest/" target="_blank">pfSense Documentation</a></li>
+            <li><a href="https://suricata.io/documentation/" target="_blank">Suricata Documentation</a></li>
+            <li><a href="https://help.ubuntu.com/community/UFW" target="_blank">UFW on Ubuntu</a></li>
+        </ul>
+    </section>
 
-## Tasks and Implementation
+    <footer>
+        <h2>Repository Contents</h2>
+        <ul>
+            <li><strong>/configs/</strong>: Contains configuration files for <strong>pfSense</strong>, <strong>Suricata</strong>, and other components.</li>
+            <li><strong>/scripts/</strong>: Includes scripts for testing connectivity, network services, and attacks.</li>
+            <li><strong>/logs/</strong>: Sample log files generated during testing and verification.</li>
+            <li><strong>/screenshots/</strong>: Visual documentation of key steps and configuration settings.</li>
+        </ul>
+    </footer>
+</body>
+</html>
 
-### **Task 1: Block Unwanted Web Traffic**
-
-- Configured **pfSense firewall rules** to block specific types of traffic (e.g., unwanted HTTP/S traffic).
-- Implemented **DNS blocklists** to prevent access to malicious and unwanted domains.
-
-#### Verification:
-Blocked traffic was tested by attempting to access restricted websites from the **Debian client**, which was successfully filtered by **pfSense**. Logs confirmed the traffic was blocked.
-
-### **Task 2: Enable Web Server and SSH Access from Remote Networks**
-
-- Set up **port forwarding** in **pfSense** to forward traffic (ports 80 and 22) to the **Ubuntu server**.
-- Configured **Apache** to serve web pages and **SSH** for secure remote access.
-- Secured services on **Ubuntu** using **UFW** to allow only necessary traffic.
-
-#### Verification:
-Used **Kali Linux** to test external access to the web server and SSH service, confirming successful connections from outside the local network.
-
-### **Task 3: Implement Suricata for DoS and SSH Brute Force Detection**
-
-- Installed and configured **Suricata** on **pfSense** for intrusion detection.
-- Developed custom **Suricata rules** to detect DoS and SSH brute force attacks.
-  - **DoS rule**: Monitors for high-volume traffic from a single IP.
-  - **SSH brute force rule**: Detects multiple failed login attempts from a single IP.
-
-#### Verification:
-Simulated both **DoS** and **SSH brute force attacks** using **Kali Linux**. **Suricata** successfully detected the attacks and generated alerts, which were logged by **pfSense**.
-
----
-
-## Network Architecture Diagram
-
-![Network Diagram](link_to_network_diagram)  
-*(The diagram shows pfSense firewall, Ubuntu server, Debian client, Kali Linux attacker, and external network connections.)*
-
----
-
-## Testing and Results
-
-Each task was tested with the following outcomes:
-
-- **Task 1**: Access to blocked websites was denied, as verified through logs on **pfSense**.
-- **Task 2**: External access to both the web server and SSH services was verified using **Kali Linux**, confirming successful connections.
-- **Task 3**: Custom rules for DoS and SSH brute force attacks triggered alerts in **Suricata**, indicating successful detection and logging.
-
----
-
-## Security Measures
-
-- Configured **pfSense firewall** to block unwanted traffic and enforce security rules.
-- Applied additional security to the **Ubuntu server** using **UFW** and SSH key-based authentication.
-- Deployed **Suricata** with custom rules to monitor and detect DoS and brute force attacks.
-
----
-
-## Conclusion
-
-This project demonstrated the ability to set up and secure a network using **pfSense**, **Ubuntu**, **Debian**, and **Kali Linux**. Tasks including traffic blocking, external service access, and intrusion detection were successfully implemented, tested, and verified. Future improvements could involve expanding the network, configuring VPNs, or enhancing the IDS with more advanced rules.
-
----
-
-## References
-
-- [pfSense Documentation](https://docs.netgate.com/pfsense/en/latest/)
-- [Suricata Documentation](https://suricata.io/documentation/)
-- [UFW on Ubuntu](https://help.ubuntu.com/community/UFW)
-
----
-
-### Repository Contents
-
-- **`/configs/`**: Contains configuration files for **pfSense**, **Suricata**, and other components.
-- **`/scripts/`**: Includes scripts for testing connectivity, network services, and attacks.
-- **`/logs/`**: Sample log files generated during testing and verification.
-- **`/screenshots/`**: Visual documentation of key step
