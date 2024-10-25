@@ -20,9 +20,9 @@ Visit my detailed [Projects Page](https://kaycxsn1.github.io/KayCxSn1/docs/proje
 
 ## Contact Information
 
-- **Email**: [your.email@example.com](mailto:your.email@example.com)
-- **LinkedIn**: [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)
-- **GitHub**: [github.com/yourusername](https://github.com/yourusername)
+- **Email**: [CoxsonK@gmail.com](mailto:CoxsonK@gmail.com)
+- **LinkedIn**: [linkedin.com/in/kaycoxson](https://linkedin.com/in/kaycoxson)
+- **GitHub**: [github.com/KayCxSn1](https://github.com/kaycxsn1)
 
 
 
