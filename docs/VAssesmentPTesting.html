@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vulnerability Assessment & Penetration Testing (VAPT)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #1e90ff;
+        }
+        a {
+            color: #1e90ff;
+        }
+        a:hover {
+            color: #ff6347;
+        }
+        header, footer {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            padding: 10px;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        ol {
+            list-style-type: decimal;
+            margin-left: 20px;
+        }
+        li {
+            margin-bottom: 15px;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Vulnerability Assessment & Penetration Testing (VAPT)</h1>
+    </header>
+
+    <section>
+        <h2>Overview</h2>
+        <p>This project focused on conducting a vulnerability assessment and penetration test on a virtual network environment. The goal was to identify potential weaknesses, exploit vulnerabilities, and provide actionable solutions for improving security. The tools used included Nmap for network scanning, Nessus for vulnerability detection, and Metasploit for exploitation.</p>
+    </section>
+
+    <section>
+        <h2>Step-by-Step Process</h2>
+        <ol>
+            <li>
+                <strong>Port Scanning with Nmap:</strong>
+                <p>The first step was to scan the network for open ports and the services running on them. I used Nmap to discover the target system's available services and their versions. This scan helped me identify which services were exposed and might be vulnerable.</p>
+                <p><strong>Command Used:</strong> <code>nmap -sV target-ip</code></p>
+                <p>This command scans the target IP for open ports and services, returning information about the version of each service. This data is crucial for determining which vulnerabilities may apply to the target.</p>
+            </li>
+
+            <li>
+                <strong>Vulnerability Assessment with Nessus:</strong>
+                <p>After identifying open ports and running services, I proceeded with Nessus to assess vulnerabilities. Nessus scans the target based on its vast vulnerability database and provides detailed information on security flaws, including CVEs (Common Vulnerabilities and Exposures).</p>
+                <p>The Nessus scan gave me a comprehensive list of known vulnerabilities associated with the services running on the target. Each vulnerability was assessed in terms of severity and potential impact.</p>
+            </li>
+
+            <li>
+                <strong>Exploitation with Metasploit:</strong>
+                <p>Once vulnerabilities were identified, I used Metasploit to attempt exploitation. I chose an appropriate Metasploit module for one of the vulnerabilities discovered by Nessus. After configuring the target settings, I ran the exploit to see if I could gain unauthorized access.</p>
+                <p>By running Metasploit’s module for an outdated service, I successfully exploited the vulnerability and gained control over the target system, proving the security flaw's real-world impact.</p>
+            </li>
+
+            <li>
+                <strong>Validation:</strong>
+                <p>Finally, I validated the exploit by confirming access to the target system. This step ensured the vulnerability was exploitable in practice, demonstrating how an attacker could compromise the network if these weaknesses were left unaddressed.</p>
+            </li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>Tools Used</h2>
+        <ul>
+            <li>Nmap: Network scanning tool used for port discovery and service identification.</li>
+            <li>Nessus: Vulnerability scanning tool used to identify potential security flaws.</li>
+            <li>Metasploit: Exploitation framework used to exploit identified vulnerabilities.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Result</h2>
+        <p>The project was a success, as I identified several vulnerabilities and demonstrated their potential for exploitation. Using Metasploit, I was able to gain unauthorized access to the target system by exploiting a known vulnerability in one of the services.</p>
+        <p>As part of the report, I provided recommendations to patch the vulnerabilities and strengthen the system’s defenses.</p>
+    </section>
+
+    <footer>
+        <h2>Contact Information</h2>
+        <ul>
+            <li><strong>Email:</strong> <a href="mailto:your.email@example.com">your.email@example.com</a></li>
+            <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></li>
+            <li><strong>GitHub:</strong> <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></li>
+        </ul>
+    </footer>
+</body>
+</html>
