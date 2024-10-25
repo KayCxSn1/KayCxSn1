@@ -3,33 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cybersecurity Projects</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Cybersecurity Projects Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #1e90ff;
+        }
+        a {
+            color: #1e90ff;
+        }
+        a:hover {
+            color: #ff6347;
+        }
+        header, footer {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            padding: 10px;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Cybersecurity Projects</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="#projects">Projects</a>
-        </nav>
+        <h1>Cybersecurity Projects Portfolio</h1>
+        <p>Welcome to my <strong>Cybersecurity Projects Portfolio</strong>! This repository showcases various cybersecurity projects that demonstrate my skills in vulnerability assessment, penetration testing, network security, and more. Below you'll find details on each project, the tools I used, and how you can replicate these projects.</p>
     </header>
 
-    <section id="projects">
-        <h2>My Projects</h2>
+    <section>
+        <h2>Table of Contents</h2>
+        <ol>
+            <li><a href="#vulnerability-assessment--penetration-testing-vapt">Vulnerability Assessment & Penetration Testing (VAPT)</a></li>
+            <li><a href="#web-application-security-testing">Web Application Security Testing</a></li>
+            <li><a href="#firewall-configuration-with-iptables">Firewall Configuration with iptables</a></li>
+            <li><a href="#intrusion-detection-system-ids-setup">Intrusion Detection System (IDS) Setup</a></li>
+            <li><a href="#password-cracking--brute-force-simulation">Password Cracking & Brute-Force Simulation</a></li>
+            <li><a href="#wi-fi-network-security">Wi-Fi Network Security</a></li>
+            <li><a href="#encryption--decryption-with-python">Encryption & Decryption with Python</a></li>
+        </ol>
+    </section>
+
+    <section id="vulnerability-assessment--penetration-testing-vapt">
+        <h2>Vulnerability Assessment & Penetration Testing (VAPT)</h2>
+        <p><strong>Objective:</strong> Identify and exploit vulnerabilities in a virtual network.</p>
         <ul>
-            <li><a href="vapt.html">Vulnerability Assessment & Penetration Testing (VAPT)</a></li>
-            <li><a href="web-security.html">Web Application Security Testing</a></li>
-            <li><a href="firewall.html">Firewall Configuration with iptables</a></li>
-            <li><a href="ids.html">Intrusion Detection System Setup</a></li>
-            <li><a href="password-cracking.html">Password Cracking & Brute-Force Simulation</a></li>
-            <li><a href="NetworkSecurity.html">Network Security</a></li>
-            <li><a href="encryption.html">Encryption & Decryption with Python</a></li>
+            <li><strong>Tools Used:</strong> Nmap, Nessus, Metasploit</li>
+            <li><strong>Description:</strong> Conducted a full vulnerability assessment on a virtual network using Nmap for network scanning, Nessus for vulnerability detection, and Metasploit for exploitation.</li>
+            <li><strong>Key Skills:</strong> Vulnerability scanning, ethical hacking, network security.</li>
         </ul>
+        <p><strong>How to Run:</strong></p>
+        <ul>
+            <li>Set up a vulnerable VM like <strong>Metasploitable</strong>.</li>
+            <li>Run Nmap scans to identify open ports and services.</li>
+            <li>Use Nessus to scan for known vulnerabilities.</li>
+            <li>Exploit vulnerabilities using Metasploit.</li>
+        </ul>
+        <p><strong>GitHub Link:</strong> <a href="https://github.com/yourusername/vapt-project" target="_blank">VAPT Project Repository</a></p>
+    </section>
+
+    <section id="web-application-security-testing">
+        <h2>Web Application Security Testing</h2>
+        <p><strong>Objective:</strong> Test a web application for security flaws.</p>
+        <ul>
+            <li><strong>Tools Used:</strong> Burp Suite, OWASP ZAP</li>
+            <li><strong>Description:</strong> Performed penetration testing on a vulnerable web application (e.g., <strong>DVWA</strong> or <strong>OWASP Juice Shop</strong>) to find and mitigate SQL injection, XSS, and other web vulnerabilities.</li>
+            <li><strong>Key Skills:</strong> Web security, OWASP Top 10, input validation.</li>
+        </ul>
+        <p><strong>How to Run:</strong></p>
+        <ul>
+            <li>Set up a vulnerable web app (e.g., <strong>DVWA</strong>).</li>
+            <li>Use Burp Suite or OWASP ZAP to test for web vulnerabilities.</li>
+            <li>Attempt to exploit found vulnerabilities and suggest fixes.</li>
+        </ul>
+        <p><strong>GitHub Link:</strong> <a href="https://github.com/yourusername/web-security-project" target="_blank">Web Application Security Project</a></p>
+    </section>
+
+    <section id="firewall-configuration-with-iptables">
+        <h2>Firewall Configuration with iptables</h2>
+        <p><strong>Objective:</strong> Secure a Linux server by configuring firewall rules using iptables.</p>
+        <ul>
+            <li><strong>Tools Used:</strong> iptables</li>
+            <li><strong>Description:</strong> Set up a firewall using iptables to control incoming and outgoing traffic, limiting access to specific services.</li>
+            <li><strong>Key Skills:</strong> Network security, Linux security.</li>
+        </ul>
+        <p><strong>How to Run:</strong></p>
+        <ul>
+            <li>Set up a Linux VM (e.g., Ubuntu or CentOS).</li>
+            <li>Install iptables and configure rules to block/allow specific ports and IPs.</li>
+            <li>Test the firewall configuration using tools like Nmap.</li>
+        </ul>
+        <p><strong>GitHub Link:</strong> <a href="https://github.com/yourusername/firewall-config-project" target="_blank">Firewall Configuration Project</a></p>
+    </section>
+
+    <section id="intrusion-detection-system-ids-setup">
+        <h2>Intrusion Detection System (IDS) Setup</h2>
+        <p><strong>Objective:</strong> Build and configure an Intrusion Detection System to monitor network traffic.</p>
+        <ul>
+            <li><strong>Tools Used:</strong> Snort, Suricata</li>
+            <li><strong>Description:</strong> Configured an IDS to detect network threats by monitoring traffic patterns and identifying potential intrusions.</li>
+            <li><strong>Key Skills:</strong> Network monitoring, intrusion detection.</li>
+        </ul>
+        <p><strong>How to Run:</strong></p>
+        <ul>
+            <li>Set up Snort or Suricata on a Linux system.</li>
+            <li>Configure IDS rules to detect suspicious traffic.</li>
+            <li>Simulate attacks (e.g., port scans, DDoS) and monitor IDS alerts.</li>
+        </ul>
+        <p><strong>GitHub Link:</strong> <a href="https://github.com/yourusername/ids-project" target="_blank">IDS Setup Project</a></p>
+    </section>
+
+    <section id="password-cracking--brute-force-simulation">
+        <h2>Password Cracking & Brute-Force Simulation</h2>
+        <p><strong>Objective:</strong> Demonstrate password cracking techniques using brute-force and dictionary attacks.</p>
+        <ul>
+            <li><strong>Tools Used:</strong> John the Ripper, Hashcat</li>
+            <li><strong>Description:</strong> Simulated cracking of hashed passwords using brute-force and dictionary attacks to demonstrate weaknesses in password security.</li>
+            <li><strong>Key Skills:</strong> Cryptography, password security.</li>
+        </ul>
+        <p><strong>How to Run:</strong></p>
+        <ul>
+            <li>Use a list of hashed passwords (e.g., MD5 or SHA-256).</li>
+            <li>Use John the Ripper or Hashcat to attempt password cracking.</li>
+            <li>Compare cracking times for weak vs. strong passwords.</li>
+        </ul>
+        <p><strong>GitHub Link:</strong> <a href="https://github.com/yourusername/password-cracking-project" target="_blank">Password Cracking Project</a></p>
+    </section>
+
+    <section id="wi-fi-network-security">
+        <h2>Wi-Fi Network Security</h2>
+        <p><strong>Objective:</strong> Secure a Wi-Fi network and analyze its traffic.</p>
+        <ul>
+            <li><strong>Tools Used:</strong> Wireshark, Aircrack-ng</li>
+            <li><strong>Description:</strong> Set up a WPA2/WPA3 wireless network, analyze network traffic, and simulate attacks using tools like Aircrack-ng.</li>
+            <li><strong>Key Skills:</strong> Wireless security, network encryption.</li>
+        </ul>
+        <p><strong>How to Run:</strong></p>
+        <ul>
+            <li>Set up a virtual or real wireless network.</li>
+            <li>Use Wireshark to monitor network traffic.</li>
+            <li>Attempt to crack WPA2 encryption with Aircrack-ng and compare to WPA3.</li>
+        </ul>
+        <p><strong>GitHub Link:</strong> <a href="https://github.com/yourusername/wifi-security-project" target="_blank">Wi-Fi Security Project</a></p>
+    </section>
+
+    <section id="encryption--decryption-with-python">
+        <h2>Encryption & Decryption with Python</h2>
+        <p><strong>Objective:</strong> Implement file encryption and decryption using Python.</p>
+        <ul>
+            <li><strong>Tools Used:</strong> Python (PyCryptodome library)</li>
+            <li><strong>Description:</strong> Wrote a Python script to encrypt and decrypt files using algorithms like AES or RSA.</li>
+            <li><strong>Key Skills:</strong> Cryptography, secure file handling.</li>
+        </ul>
+        <p><strong>How to Run:</strong></p>
+        <ul>
+            <li>Install the PyCryptodome library (<code>pip install pycryptodome</code>).</li>
+            <li>Run the encryption script to secure a file.</li>
+            <li>Use the decryption script to restore the file.</li>
+        </ul>
+        <p><strong>GitHub Link:</strong> <a href="https://github.com/yourusername/encryption-project" target="_blank">Encryption & Decryption Project</a></p>
     </section>
 
     <footer>
-        <p>&copy; 2024 Karriem Coxson</p>
+        <h2>Contact Information</h2>
+        <ul>
+            <li><strong>Email:</strong> <a href="mailto:your.email@example.com">your.email@example.com</a></li>
+            <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></li>
+            <li><strong>GitHub:</strong> <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></li>
+        </ul>
     </footer>
 </body>
 </html>
