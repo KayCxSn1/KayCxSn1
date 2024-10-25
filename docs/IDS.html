@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intrusion Detection System (IDS) Setup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #1e90ff;
+        }
+        a {
+            color: #1e90ff;
+        }
+        a:hover {
+            color: #ff6347;
+        }
+        header, footer {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            padding: 10px;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        ol {
+            list-style-type: decimal;
+            margin-left: 20px;
+        }
+        li {
+            margin-bottom: 15px;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Intrusion Detection System (IDS) Setup</h1>
+    </header>
+
+    <section>
+        <h2>Overview</h2>
+        <p>This project involved configuring an Intrusion Detection System (IDS) using Suricata to monitor network traffic and detect potential threats. By setting up custom rules, I aimed to catch specific attacks such as Denial of Service (DoS) and SSH brute-force attempts, providing visibility into network security and alerting on suspicious activities.</p>
+    </section>
+
+    <section>
+        <h2>Step-by-Step Process</h2>
+        <ol>
+            <li>
+                <strong>Installing Suricata:</strong>
+                <p>I started by installing Suricata on a Linux server to act as the IDS. Suricata, known for its high performance and open-source nature, is ideal for deep packet inspection and real-time alerting. Installation was completed with:</p>
+                <code>sudo apt-get install suricata</code>
+                <p>This command fetched and installed Suricata along with its dependencies, setting the server up for intrusion detection.</p>
+            </li>
+
+            <li>
+                <strong>Configuring Suricata for Network Monitoring:</strong>
+                <p>After installation, I configured Suricata to monitor the server's network interfaces. Using the <code>/etc/suricata/suricata.yaml</code> file, I specified the interface to be monitored:</p>
+                <code>interface: eth0</code>
+                <p>This setting directed Suricata to watch all incoming and outgoing traffic on the primary network interface (eth0) for potential threats.</p>
+            </li>
+
+            <li>
+                <strong>Creating Custom Rules:</strong>
+                <p>To tailor the IDS to detect specific attack types, I created custom rules for DoS and SSH brute-force detection. The custom rules were added to Suricata's local rules file <code>/etc/suricata/rules/local.rules</code>:</p>
+                <ul>
+                    <li>
+                        <em>DoS Detection Rule:</em> This rule monitored a threshold of connection attempts to detect potential DoS attacks:
+                        <pre>drop ip any any -> any any (msg: "DoS Attack Detected"; threshold: type both, track by_dst, count 50, seconds 10; sid:1000001; rev:1;)</pre>
+                        <p>This rule triggered an alert if there were 50 or more packets directed at the same IP within 10 seconds, suggesting a DoS attack.</p>
+                    </li>
+                    <li>
+                        <em>SSH Brute-Force Detection Rule:</em> I added a rule to detect repeated SSH connection attempts, which could indicate a brute-force attack:
+                        <pre>alert tcp any any -> any 22 (msg: "SSH Brute Force Detected"; flow: to_server, established; detection_filter: track by_src, count 5, seconds 60; sid:1000002; rev:1;)</pre>
+                        <p>This rule generated an alert if more than 5 SSH attempts were made from a single source within 60 seconds.</p>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <strong>Testing the Rules:</strong>
+                <p>After implementing the rules, I tested their effectiveness using a Kali Linux machine. For DoS, I simulated traffic surges using <code>hping3</code> to flood the server with packets:</p>
+                <code>hping3 -c 100 -d 120 -S -w 64 --flood --rand-source <em>target_ip</em></code>
+                <p>To test the SSH brute-force rule, I used <code>hydra</code> to simulate multiple login attempts within a short period:</p>
+                <code>hydra -l user -P password_list.txt ssh://<em>target_ip</em></code>
+                <p>Both tests were successful; Suricata detected the attack patterns and generated alerts based on the rules configured.</p>
+            </li>
+
+            <li>
+                <strong>Verifying Alert Logs:</strong>
+                <p>To confirm that Suricata detected the simulated attacks, I reviewed the alert logs located in <code>/var/log/suricata/fast.log</code>. The log entries showed alerts triggered by the custom rules for both the DoS and brute-force attempts, proving the IDS configuration was effective.</p>
+            </li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>Tools Used</h2>
+        <ul>
+            <li><strong>Suricata:</strong> Deployed as the IDS for deep packet inspection and alerting.</li>
+            <li><strong>Kali Linux:</strong> Used as the attack machine to simulate DoS and brute-force attacks.</li>
+            <li><strong>hping3:</strong> Utilized to generate network floods for DoS testing.</li>
+            <li><strong>hydra:</strong> Employed for brute-force SSH testing.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Result</h2>
+        <p>The Intrusion Detection System was successfully configured to monitor network traffic and detect specific attack patterns. Suricata generated alerts for both DoS and brute-force attempts based on custom rules, verifying the effectiveness of the IDS configuration in identifying and logging suspicious activities.</p>
+    </section>
+
+    <footer>
+        <h2>Contact Information</h2>
+        <ul>
+            <li><strong>Email:</strong> <a href="mailto:your.email@example.com">your.email@example.com</a></li>
+            <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></li>
+            <li><strong>GitHub:</strong> <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></li>
+        </ul>
+    </footer>
+</body>
+</html>
