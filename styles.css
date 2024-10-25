@@ -1,0 +1,18 @@
+/* styles.css */
+body {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+a {
+    color: #1e90ff;
+}
+
+a:hover {
+    color: #ff6347;
+}
+
+header, footer {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
